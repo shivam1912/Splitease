@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SplitEase – Split Expenses Effortlessly</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- App Styles -->
+  <link rel="stylesheet" href="css/variables.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/landing.css"/>
+  <link rel="stylesheet" href="css/auth.css"/>
+  <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+</head>
+<body>
+
+  <!-- ===================== LANDING PAGE ===================== -->
+  <div id="page-landing" class="page active">
+    <!-- injected by pages/landing.js -->
+  </div>
+
+  <!-- ===================== AUTH PAGE ===================== -->
+  <div id="page-auth" class="page">
+    <!-- injected by pages/auth.js -->
+  </div>
+
+  <!-- ===================== APP PAGE ===================== -->
+  <div id="page-app" class="page">
+    <!-- injected by pages/app.js -->
+  </div>
+
+  <!-- ===================== MODALS ===================== -->
+  <div id="modals-root">
+    <!-- injected by pages/modals.js -->
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <span id="toast-icon">✅</span>
+    <span id="toast-msg">Done!</span>
+  </div>
+
+  <!-- ===================== JAVASCRIPT MODULES ===================== -->
+  <script src="js/storage.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/charts.dashboard.js"></script>
+  <script src="js/charts.analytics.js"></script>
+  <script src="js/actions.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- ===================== PAGE TEMPLATES ===================== -->
+  <script src="pages/landing.js"></script>
+  <script src="pages/auth.js"></script>
+  <script src="pages/app.js"></script>
+  <script src="pages/modals.js"></script>
+
+  <!-- ===================== BOOT ===================== -->
+  <script src="js/boot.js"></script>
+
+</body>
+</html>

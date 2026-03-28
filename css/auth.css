@@ -1,0 +1,64 @@
+/* ============================================================
+   AUTH PAGE STYLES
+   ============================================================ */
+#page-auth {
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  z-index: 1;
+  animation: fadeSlideUp 0.5s ease;
+}
+
+.auth-tab-bar {
+  display: flex;
+  background: var(--surface2);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 28px;
+}
+.auth-tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--muted);
+  transition: 0.2s;
+}
+.auth-tab.active { background: var(--accent); color: #0e0f14; }
+
+/* Background orbs */
+.auth-orb1 {
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  filter: blur(100px);
+  background: rgba(110,231,183,0.07);
+  top: -100px; right: -100px;
+  pointer-events: none;
+}
+.auth-orb2 {
+  position: absolute;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  filter: blur(100px);
+  background: rgba(129,140,248,0.06);
+  bottom: -100px; left: -100px;
+  pointer-events: none;
+}

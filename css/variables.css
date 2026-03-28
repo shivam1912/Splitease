@@ -1,0 +1,23 @@
+/* ============================================================
+   CSS CUSTOM PROPERTIES (Design Tokens)
+   ============================================================ */
+:root {
+  /* Background layers */
+  --bg:       #0e0f14;
+  --surface:  #16181f;
+  --surface2: #1e2029;
+  --border:   #2a2d3a;
+
+  /* Accent palette */
+  --accent:  #6ee7b7;
+  --accent2: #818cf8;
+  --accent3: #fb923c;
+
+  /* Typography */
+  --text:  #e8eaf2;
+  --muted: #6b7280;
+
+  /* Semantic */
+  --danger:  #f87171;
+  --success: #34d399;
+}

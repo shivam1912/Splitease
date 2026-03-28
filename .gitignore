@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (if ever adding a dev server)
+node_modules/
+npm-debug.log*
+
+# Build output (none currently, placeholder)
+dist/

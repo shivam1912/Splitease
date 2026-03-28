@@ -1,0 +1,204 @@
+/* ============================================================
+   APP PAGE — SIDEBAR & MAIN LAYOUT
+   ============================================================ */
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: 260px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  z-index: 50;
+  transition: transform 0.3s ease;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.18s;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--muted);
+  margin: 2px 8px;
+}
+.nav-item:hover  { background: var(--surface2); color: var(--text); }
+.nav-item.active { background: rgba(110,231,183,0.12); color: var(--accent); }
+.nav-icon        { width: 20px; text-align: center; }
+
+/* Main content area */
+.main {
+  margin-left: 260px;
+  padding: 28px;
+  min-height: 100vh;
+}
+
+/* Mobile overrides */
+@media (max-width: 768px) {
+  .main               { margin-left: 0; padding: 16px; padding-top: 72px; }
+  .sidebar            { transform: translateX(-100%); }
+  .sidebar.mobile-open{ transform: translateX(0); }
+}
+
+/* Hamburger button */
+#hamburger {
+  display: none;
+  position: fixed;
+  top: 16px; left: 16px;
+  z-index: 200;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  color: var(--text);
+}
+@media (max-width: 768px) { #hamburger { display: block; } }
+
+/* App sections — scoped inside #page-app to avoid colliding with landing .section */
+#page-app .section              { display: none; }
+#page-app .section.active       { display: block; }
+
+/* Stat cards */
+.stat-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  opacity: 0.12;
+}
+.stat-card.green::before  { background: var(--accent); }
+.stat-card.purple::before { background: var(--accent2); }
+.stat-card.orange::before { background: var(--accent3); }
+.stat-card.red::before    { background: var(--danger); }
+
+/* Dashboard chart cards */
+.dash-chart-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.dash-chart-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  opacity: 0.6;
+}
+
+.mini-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.mini-stat.up   { background: rgba(52,211,153,0.12); color: var(--success); }
+.mini-stat.down { background: rgba(248,113,113,0.12); color: var(--danger); }
+
+/* Insight pills */
+.insight-pill {
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Friend & Group cards */
+.friend-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  transition: all 0.18s;
+  margin-bottom: 10px;
+}
+.friend-card:hover { border-color: rgba(110,231,183,0.3); }
+
+.group-card {
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  transition: all 0.18s;
+}
+.group-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
+
+/* Expense row */
+.expense-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  transition: all 0.18s;
+}
+.expense-row:last-child { border-bottom: none; }
+
+.cat-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* Reminder dot */
+.reminder-dot {
+  width: 8px; height: 8px;
+  background: var(--accent3);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 1.5s infinite;
+}
+
+/* Budget progress */
+.progress-bar  { height: 8px; border-radius: 4px; background: var(--border); overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
+
+/* Warn flash */
+.warn-flash { animation: warnFlash 1.4s infinite; }
+
+/* Member chip */
+.member-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(129,140,248,0.12);
+  border: 1px solid rgba(129,140,248,0.25);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent2);
+}
